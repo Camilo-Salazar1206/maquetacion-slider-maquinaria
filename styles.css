@@ -521,6 +521,31 @@ body {
     text-align: left;
 }
 
+
+
+
+.portfolio-title-mobile {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 20px 0 10px 0;
+    text-align: center;
+}
+
+.portfolio-highlight-mobile {
+    background: linear-gradient(90deg, #ff8500 0%, #ffd600 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.portfolio-subtitle-mobile {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-align: center;
+}
 /* Desktop View */
 .desktop-view {
     width: 100%;
