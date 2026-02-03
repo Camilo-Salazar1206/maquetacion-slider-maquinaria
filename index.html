@@ -5,162 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo Slider - Desktop y Mobile</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #1a1a2e;
-            padding: 40px 20px;
-        }
-
-        .demo-container {
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        .demo-title {
-            text-align: center;
-            color: white;
-            font-size: 36px;
-            margin-bottom: 40px;
-            font-weight: 700;
-        }
-
-        .demo-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .demo-section {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .demo-section h2 {
-            color: white;
-            font-size: 24px;
-            margin-bottom: 20px;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .demo-section .color-indicators {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .color-box {
-            width: 60px;
-            height: 40px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        .color-box.orange {
-            background: #ff8500;
-        }
-
-        .color-box.green {
-            background: #00e676;
-        }
-
-        .color-box.yellow {
-            background: #ffd600;
-        }
-
-        /* Desktop View */
-        .desktop-view {
-            width: 100%;
-        }
-
-        .desktop-view .slider-container {
-            max-width: 100%;
-        }
-
-        /* Mobile View */
-        .mobile-view {
-            width: 375px;
-            margin: 0 auto;
-        }
-
-        .mobile-view .slider-container {
-            max-width: 100%;
-        }
-
-        .mobile-view .slide {
-            grid-template-columns: 1fr;
-            padding: 25px 20px;
-            gap: 20px;
-        }
-
-        .mobile-view .slide-title {
-            font-size: 28px;
-            margin-bottom: 6px;
-        }
-
-        .mobile-view .slide-subtitle {
-            font-size: 16px;
-            margin-bottom: 12px;
-        }
-
-        .mobile-view .slide-description {
-            font-size: 12px;
-            line-height: 1.5;
-            margin-bottom: 8px;
-        }
-
-        .mobile-view .slide-image {
-            height: 220px;
-            order: -1;
-        }
-
-        .mobile-view .slide-image::before {
-            width: 250px;
-            height: 250px;
-        }
-
-        .mobile-view .slider-arrow {
-            display: none;
-        }
-
-        .mobile-view .slider-dots {
-            bottom: 15px;
-            gap: 6px;
-        }
-
-        .mobile-view .dot {
-            width: 7px;
-            height: 7px;
-        }
-
-        .mobile-view .dot.active {
-            width: 20px;
-            border-radius: 4px;
-        }
-
-        @media (max-width: 1200px) {
-            .demo-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .mobile-view {
-                width: 100%;
-                max-width: 375px;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="demo-container">
@@ -175,13 +19,15 @@
                     <div class="color-box green">2</div>
                     <div class="color-box yellow">3</div>
                 </div>
+                <h1 class="portfolio-title">Nuestro <span class="portfolio-highlight">portafolio</span></h1>
+                <p class="portfolio-subtitle">Seleccione la maquinaria que necesita al plazo que requiera, sin endeudamiento.</p>
                 <div class="desktop-view">
                     <div class="slider-container" id="desktop-slider">
                         <div class="slider-wrapper" id="desktopSliderWrapper">
                             <!-- Slide 1: Excavadoras -->
                             <div class="slide">
                                 <div class="slide-content">
-                                    <h2 class="slide-title">Excavadoras</h2>
+                                    <h1 class="slide-title">Excavadoras</h1>
                                     <p class="slide-subtitle">Movimiento de tierra</p>
                                     <p class="slide-description">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis nostrud exercitation ullamco laboris nisi ut aliquip suspendisse ultrices gravida.
@@ -201,7 +47,7 @@
                             <!-- Slide 2: Rodillo Compactador -->
                             <div class="slide">
                                 <div class="slide-content">
-                                    <h2 class="slide-title">Rodillo Compactador</h2>
+                                    <h1 class="slide-title">Aplanadoras</h1>
                                     <p class="slide-subtitle">Compactación de suelos</p>
                                     <p class="slide-description">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis nostrud exercitation ullamco laboris nisi ut aliquip suspendisse ultrices gravida.
@@ -221,7 +67,7 @@
                             <!-- Slide 3: Tractores -->
                             <div class="slide">
                                 <div class="slide-content">
-                                    <h2 class="slide-title">Tractores</h2>
+                                    <h1 class="slide-title">Tractores</h1>
                                     <p class="slide-subtitle">Maquinaria agrícola</p>
                                     <p class="slide-description">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis nostrud exercitation ullamco laboris nisi ut aliquip suspendisse ultrices gravida.
@@ -239,8 +85,16 @@
                             </div>
                         </div>
 
-                        <button class="slider-arrow prev" onclick="moveDesktopSlide(-1)">→</button>
-                        <button class="slider-arrow next" onclick="moveDesktopSlide(1)">→</button>
+                        <button class="slider-arrow prev" onclick="moveDesktopSlide(-1)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+                                <path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"/>
+                            </svg>
+                        </button>
+                        <button class="slider-arrow next" onclick="moveDesktopSlide(1)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+                                <path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"/>
+                            </svg>
+                        </button>
                         <div class="slider-dots" id="desktopDotsContainer"></div>
                     </div>
                 </div>
@@ -254,6 +108,8 @@
                     <div class="color-box green">2</div>
                     <div class="color-box yellow">3</div>
                 </div>
+                  <h1 class="portfolio-title">Nuestro <span class="portfolio-highlight">portafolio</span></h1>
+                <p class="portfolio-subtitle">Seleccione la maquinaria que necesita al plazo que requiera, sin endeudamiento.</p>
                 <div class="mobile-view">
                     <div class="slider-container" id="mobile-slider">
                         <div class="slider-wrapper" id="mobileSliderWrapper">
@@ -327,194 +183,6 @@
         </div>
     </div>
 
-    <script>
-        // Desktop Slider
-        let desktopCurrentSlide = 0;
-        const desktopSlides = document.querySelectorAll('#desktop-slider .slide');
-        const desktopTotalSlides = desktopSlides.length;
-        const desktopSliderWrapper = document.getElementById('desktopSliderWrapper');
-        const desktopDotsContainer = document.getElementById('desktopDotsContainer');
-        const desktopContainer = document.getElementById('desktop-slider');
-
-        for (let i = 0; i < desktopTotalSlides; i++) {
-            const dot = document.createElement('div');
-            dot.className = 'dot';
-            if (i === 0) dot.classList.add('active');
-            dot.onclick = () => goToDesktopSlide(i);
-            desktopDotsContainer.appendChild(dot);
-        }
-
-        const desktopDots = document.querySelectorAll('#desktopDotsContainer .dot');
-
-        function updateDesktopSlider() {
-            desktopSliderWrapper.style.transform = `translateX(-${desktopCurrentSlide * 100}%)`;
-            desktopDots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === desktopCurrentSlide);
-            });
-        }
-
-        function moveDesktopSlide(direction) {
-            desktopCurrentSlide += direction;
-            if (desktopCurrentSlide < 0) desktopCurrentSlide = desktopTotalSlides - 1;
-            else if (desktopCurrentSlide >= desktopTotalSlides) desktopCurrentSlide = 0;
-            updateDesktopSlider();
-        }
-
-        function goToDesktopSlide(index) {
-            desktopCurrentSlide = index;
-            updateDesktopSlider();
-        }
-
-        // Desktop Drag
-        let desktopIsDragging = false;
-        let desktopStartPos = 0;
-        let desktopCurrentTranslate = 0;
-        let desktopPrevTranslate = 0;
-
-        desktopContainer.addEventListener('mousedown', (e) => {
-            desktopStartPos = e.clientX;
-            desktopIsDragging = true;
-            desktopContainer.style.cursor = 'grabbing';
-        });
-
-        desktopContainer.addEventListener('mousemove', (e) => {
-            if (!desktopIsDragging) return;
-            desktopCurrentTranslate = desktopPrevTranslate + e.clientX - desktopStartPos;
-        });
-
-        desktopContainer.addEventListener('mouseup', (e) => {
-            if (!desktopIsDragging) return;
-            desktopIsDragging = false;
-            const movedBy = desktopCurrentTranslate - desktopPrevTranslate;
-            
-            if (movedBy < -100) {
-                desktopCurrentSlide = (desktopCurrentSlide + 1) % desktopTotalSlides;
-            } else if (movedBy > 100) {
-                desktopCurrentSlide = (desktopCurrentSlide - 1 + desktopTotalSlides) % desktopTotalSlides;
-            }
-            
-            desktopPrevTranslate = desktopCurrentSlide * -desktopContainer.offsetWidth;
-            updateDesktopSlider();
-            desktopContainer.style.cursor = 'grab';
-        });
-
-        desktopContainer.addEventListener('mouseleave', () => {
-            if (desktopIsDragging) {
-                desktopIsDragging = false;
-                desktopContainer.style.cursor = 'grab';
-            }
-        });
-
-        desktopContainer.style.cursor = 'grab';
-
-        // Mobile Slider
-        let mobileCurrentSlide = 0;
-        const mobileSlides = document.querySelectorAll('#mobile-slider .slide');
-        const mobileTotalSlides = mobileSlides.length;
-        const mobileSliderWrapper = document.getElementById('mobileSliderWrapper');
-        const mobileDotsContainer = document.getElementById('mobileDotsContainer');
-        const mobileContainer = document.getElementById('mobile-slider');
-
-        for (let i = 0; i < mobileTotalSlides; i++) {
-            const dot = document.createElement('div');
-            dot.className = 'dot';
-            if (i === 0) dot.classList.add('active');
-            dot.onclick = () => goToMobileSlide(i);
-            mobileDotsContainer.appendChild(dot);
-        }
-
-        const mobileDots = document.querySelectorAll('#mobileDotsContainer .dot');
-
-        function updateMobileSlider() {
-            mobileSliderWrapper.style.transform = `translateX(-${mobileCurrentSlide * 100}%)`;
-            mobileDots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === mobileCurrentSlide);
-            });
-        }
-
-        function moveMobileSlide(direction) {
-            mobileCurrentSlide += direction;
-            if (mobileCurrentSlide < 0) mobileCurrentSlide = mobileTotalSlides - 1;
-            else if (mobileCurrentSlide >= mobileTotalSlides) mobileCurrentSlide = 0;
-            updateMobileSlider();
-        }
-
-        function goToMobileSlide(index) {
-            mobileCurrentSlide = index;
-            updateMobileSlider();
-        }
-
-        // Mobile Drag
-        let mobileIsDragging = false;
-        let mobileStartPos = 0;
-        let mobileCurrentTranslate = 0;
-        let mobilePrevTranslate = 0;
-
-        mobileContainer.addEventListener('mousedown', (e) => {
-            mobileStartPos = e.clientX;
-            mobileIsDragging = true;
-            mobileContainer.style.cursor = 'grabbing';
-        });
-
-        mobileContainer.addEventListener('touchstart', (e) => {
-            mobileStartPos = e.touches[0].clientX;
-            mobileIsDragging = true;
-        });
-
-        mobileContainer.addEventListener('mousemove', (e) => {
-            if (!mobileIsDragging) return;
-            mobileCurrentTranslate = mobilePrevTranslate + e.clientX - mobileStartPos;
-        });
-
-        mobileContainer.addEventListener('touchmove', (e) => {
-            if (!mobileIsDragging) return;
-            mobileCurrentTranslate = mobilePrevTranslate + e.touches[0].clientX - mobileStartPos;
-        });
-
-        mobileContainer.addEventListener('mouseup', (e) => {
-            if (!mobileIsDragging) return;
-            mobileIsDragging = false;
-            const movedBy = mobileCurrentTranslate - mobilePrevTranslate;
-            
-            if (movedBy < -50) {
-                mobileCurrentSlide = (mobileCurrentSlide + 1) % mobileTotalSlides;
-            } else if (movedBy > 50) {
-                mobileCurrentSlide = (mobileCurrentSlide - 1 + mobileTotalSlides) % mobileTotalSlides;
-            }
-            
-            mobilePrevTranslate = mobileCurrentSlide * -mobileContainer.offsetWidth;
-            updateMobileSlider();
-            mobileContainer.style.cursor = 'grab';
-        });
-
-        mobileContainer.addEventListener('touchend', (e) => {
-            if (!mobileIsDragging) return;
-            mobileIsDragging = false;
-            const movedBy = mobileCurrentTranslate - mobilePrevTranslate;
-            
-            if (movedBy < -50) {
-                mobileCurrentSlide = (mobileCurrentSlide + 1) % mobileTotalSlides;
-            } else if (movedBy > 50) {
-                mobileCurrentSlide = (mobileCurrentSlide - 1 + mobileTotalSlides) % mobileTotalSlides;
-            }
-            
-            mobilePrevTranslate = mobileCurrentSlide * -mobileContainer.offsetWidth;
-            updateMobileSlider();
-        });
-
-        mobileContainer.addEventListener('mouseleave', () => {
-            if (mobileIsDragging) {
-                mobileIsDragging = false;
-                mobileContainer.style.cursor = 'grab';
-            }
-        });
-
-        mobileContainer.style.cursor = 'grab';
-
-        // Rotate prev arrows
-        document.querySelectorAll('.slider-arrow.prev').forEach(arrow => {
-            arrow.style.transform = 'translateY(-50%) rotate(180deg)';
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
