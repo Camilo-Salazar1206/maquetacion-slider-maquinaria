@@ -13,8 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-/* --- ESTILOS DEL SLIDER PRINCIPAL --- */
-
+/* --- SLIDER PRINCIPAL --- */
 .slider-container {
     background-color: #000000;
     border-radius: 20px;
@@ -29,7 +28,6 @@ body {
     transition: transform 0.5s ease-in-out;
 }
 
-/* Diseño del Slide (Split View) */
 .slide {
     min-width: 100%;
     display: flex; 
@@ -40,7 +38,6 @@ body {
     padding: 0;
 }
 
-/* Columna Izquierda: Texto */
 .slide-text-column {
     flex: 1;
     padding: 60px 50px 60px 90px;
@@ -51,7 +48,6 @@ body {
     z-index: 2;
 }
 
-/* Columna Derecha: Imagen */
 .slide-image-column {
     flex: 1.2;
     position: relative;
@@ -99,7 +95,7 @@ body {
 }
 
 .slide-btn {
-    background-color: #ffd600; /* Amarillo */
+    background-color: #ffd600;
     color: #000;
     font-weight: 700;
     padding: 15px 35px;
@@ -170,6 +166,471 @@ body {
     transform: scale(1.2);
 }
 
+/* --- TABS SLIDER --- */
+.tabs-container {
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 100%;
+}
+
+.tabs-header {
+    display: flex;
+    background: #151515;
+    border-bottom: 2px solid #2a2a2a;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    background: transparent;
+    border: none;
+    color: #b0b0b0;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tab-button:hover {
+    color: #ffffff;
+    background: rgba(255, 140, 0, 0.1);
+}
+
+.tab-button.active {
+    color: #FF8C00;
+    background: #1a1a1a;
+}
+
+.tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #FF8C00;
+}
+
+.tab-content {
+    display: none;
+    padding: 1.2rem;
+    animation: fadeIn 0.3s ease;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Scrollbar */
+.tab-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tab-content::-webkit-scrollbar-track {
+    background: #151515;
+    border-radius: 10px;
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+    background: #FF8C00;
+    border-radius: 10px;
+}
+
+/* Specs Tab */
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.spec-card {
+    background: #0f0f0f;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #2a2a2a;
+    transition: all 0.3s ease;
+}
+
+.spec-card:hover {
+    border-color: #FF8C00;
+    transform: translateY(-2px);
+}
+
+.spec-card h4 {
+    color: #FF8C00;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.5px;
+}
+
+.spec-card p {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    color: #ffffff;
+}
+
+.spec-card small {
+    color: #b0b0b0;
+    font-size: 0.75rem;
+}
+
+.accordion-item {
+    background: #0f0f0f;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    overflow: hidden;
+}
+
+.accordion-header {
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+    background: rgba(255, 140, 0, 0.1);
+}
+
+.accordion-header h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+    color: #FF8C00;
+    font-size: 0.9rem;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 1rem;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 300px;
+    padding: 0 1rem 0.8rem 1rem;
+}
+
+.spec-list {
+    list-style: none;
+}
+
+.spec-list li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #2a2a2a;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+.spec-list li:last-child {
+    border-bottom: none;
+}
+
+.spec-list .label {
+    color: #b0b0b0;
+}
+
+.spec-list .value {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Services Tab */
+.service-category {
+    background: #0f0f0f;
+    border-radius: 8px;
+    border: 1px solid #2a2a2a;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.category-title {
+    color: #FF8C00;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem;
+    background: rgba(16, 185, 129, 0.05);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+    color: #ffffff;
+}
+
+.service-item:hover {
+    background: rgba(16, 185, 129, 0.15);
+    transform: translateX(3px);
+}
+
+.checkmark {
+    width: 16px;
+    height: 16px;
+    background: #10b981;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.7rem;
+}
+
+.checkmark::after {
+    content: '✓';
+    color: white;
+    font-weight: bold;
+}
+
+/* Tiempo Tab */
+.availability-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.availability-card {
+    background: #0f0f0f;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid #2a2a2a;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.availability-card:hover {
+    border-color: #FF8C00;
+    transform: translateY(-3px);
+}
+
+.availability-card.recommended {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.duration-badge {
+    display: inline-block;
+    background: #FF8C00;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+.availability-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+    color: #FF8C00;
+}
+
+.availability-card p {
+    color: #b0b0b0;
+    font-size: 0.75rem;
+    margin: 0.2rem 0;
+}
+
+.info-box {
+    background: #0f0f0f;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #2a2a2a;
+    margin-bottom: 0.8rem;
+}
+
+.info-box h4 {
+    color: #FF8C00;
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    font-size: 0.8rem;
+    color: #ffffff;
+}
+
+.info-row:last-child {
+    margin-bottom: 0;
+}
+
+.info-row strong {
+    color: #10b981;
+}
+
+/* Pago Tab */
+.pricing-calculator {
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+    padding: 1.2rem;
+    border-radius: 8px;
+    border: 1px solid #2a2a2a;
+    margin-bottom: 1rem;
+}
+
+.calculator-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #FF8C00;
+}
+
+.calculator-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.control-group label {
+    font-size: 0.75rem;
+    color: #b0b0b0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+.control-group select,
+.control-group input {
+    width: 100%;
+    padding: 0.6rem;
+    background: #0a0a0a;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.85rem;
+}
+
+.control-group select:focus,
+.control-group input:focus {
+    outline: none;
+    border-color: #FF8C00;
+}
+
+.price-display {
+    background: #FF8C00;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.price-label {
+    font-size: 0.75rem;
+    opacity: 0.9;
+    margin-bottom: 0.3rem;
+    color: #ffffff;
+}
+
+.price-amount {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.pricing-table {
+    background: #0f0f0f;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+}
+
+.pricing-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pricing-table th {
+    background: #151515;
+    padding: 0.7rem;
+    text-align: left;
+    color: #FF8C00;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.pricing-table td {
+    padding: 0.7rem;
+    border-bottom: 1px solid #2a2a2a;
+    font-size: 0.8rem;
+    color: #ffffff;
+}
+
+.pricing-table tr:hover {
+    background: rgba(255, 140, 0, 0.05);
+}
+
+.price-tag {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FF8C00;
+}
+
+/* --- DEMO CONTAINERS --- */
 .demo-container {
     max-width: 100%;
     margin: 0;
@@ -186,7 +647,7 @@ body {
 
 .demo-grid {
     display: grid;
-    grid-template-columns: 2.5fr 1fr;
+    grid-template-columns: 1fr;
     gap: 40px;
     margin-bottom: 40px;
 }
@@ -205,6 +666,37 @@ body {
     margin-bottom: 20px;
     text-align: center;
     font-weight: 600;
+}
+
+.version-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.version-header h2 {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.view-toggle-btn {
+    background: #0f0f0f;
+    color: #ffffff;
+    border: 1px solid #2a2a2a;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.view-toggle-btn:hover {
+    border-color: #FF8C00;
+    color: #FF8C00;
 }
 
 .demo-section .color-indicators {
@@ -226,6 +718,7 @@ body {
     font-size: 14px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
+
 .color-box.orange { background: #ff8500; }
 .color-box.green { background: #00e676; }
 .color-box.yellow { background: #ffd600; }
@@ -257,93 +750,212 @@ body {
     color: white;
     margin-bottom: 20px;
 }
+
 .portfolio-subtitle { text-align: left; }
 .portfolio-subtitle-mobile { text-align: center; }
 
+/* --- VIEWS --- */
 .desktop-view { 
     width: 100%; 
     max-width: 1400px;
     margin: 0 auto;
 }
-.mobile-view { width: 375px; margin: 0 auto; }
 
-/* Forzamos el estilo móvil específicamente dentro del contenedor de demo móvil */
-.mobile-view .slide {
-    flex-direction: column-reverse;
-    min-height: auto;
-    padding: 0;
-}
+/* --- RESPONSIVE --- */
+@media (max-width: 1200px) {
+    .slide-text-column {
+        padding: 50px 40px 50px 60px;
+    }
 
-.mobile-view .slide-image-column {
-    width: 100%;
-    height: 250px;
-    flex: none;
-    overflow: hidden;
-    margin: -25px 0 0 0;
-}
-
-.mobile-view .slide-image-column img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
-
-.mobile-view .slide-text-column {
-    width: 100%;
-    padding: 30px 25px;
-    flex: none;
-    align-items: center;
-    text-align: center;
-}
-
-.mobile-view .slide-main-title {
-    font-size: 28px;
-    text-align: center;
-}
-
-.mobile-view .slide-description {
-    text-align: center;
-    font-size: 14px;
- 
-}
-
-.mobile-view .slider-dots {
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 25px;
+    .slide-main-title {
+        font-size: 40px;
+    }
 }
 
 @media (max-width: 968px) {
-    .demo-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .demo-section {
-        padding: 30px 10px;
+        padding: 20px 15px;
     }
-    
+
     .slide {
         flex-direction: column-reverse;
+        min-height: auto;
     }
-    
+
     .slide-image-column {
-        width: 100%;
-        height: 300px;
+        height: 320px;
     }
-    
+
     .slide-text-column {
-        padding: 40px 30px;
+        padding: 30px 24px;
         align-items: center;
-    }
-    
-    .slide-main-title, .slide-description {
         text-align: center;
+    }
+
+    .slide-description {
+        max-width: 100%;
     }
 
     .slider-dots {
         left: 50%;
         transform: translateX(-50%);
     }
+
+    .specs-grid,
+    .service-list,
+    .availability-grid,
+    .calculator-controls {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .tab-button {
+        font-size: 0.75rem;
+        padding: 0.7rem 0.5rem;
+    }
+
+    .tab-content {
+        max-height: 220px;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 24px 0;
+    }
+
+    .slide-main-title {
+        font-size: 28px;
+    }
+
+    .slide-uptitle {
+        font-size: 16px;
+    }
+
+    .slide-description {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .slider-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .slider-arrow.prev {
+        left: 10px;
+    }
+
+    .slider-arrow.next {
+        right: 10px;
+    }
+}
+/* --- TOGGLE MOBILE PREVIEW --- */
+.view-mobile .demo-section {
+    max-width: 450px; /* Ancho típico de móvil */
+    margin: 0 auto;
+}
+
+.view-mobile .slider-container {
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+    /* Quitamos cualquier altura fija para que crezca con el contenido */
+    height: auto; 
+}
+
+.view-mobile .slider-wrapper {
+    width: 100%;
+    display: flex;
+    /* Aseguramos que el wrapper se comporte bien */
+    height: auto;
+}
+
+.view-mobile .slide {
+    display: flex;
+    flex-direction: column-reverse; 
+    
+    /* ESTA ES LA SOLUCIÓN: */
+    justify-content: flex-end; 
+    
+    min-height: auto;
+    min-width: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    position: relative;
+    background: #000;
+}
+
+.view-mobile .slide-image-column {
+    width: 100%;
+    height: 250px;
+    flex: none;
+    position: relative;
+    order: unset;
+    
+    /* Asegúrate de tener esto también */
+    margin: 0;
+    padding: 0;
+}
+
+/* Y esto quita espacios fantasmas debajo de las imágenes */
+.view-mobile .slide-image-column img {
+    display: block; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.view-mobile .slide-text-column {
+    width: 100%;
+    height: auto; /* Deja que el texto defina la altura */
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: none;
+    order: unset; /* Reseteamos el order */
+}
+
+/* Ajustes de texto para que se vea bien en el espacio reducido */
+.view-mobile .slide-main-title {
+    font-size: 32px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.view-mobile .slide-description {
+    font-size: 15px;
+    line-height: 1.4;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Ajustamos los grids internos para que sean de 1 columna */
+.view-mobile .specs-grid,
+.view-mobile .service-list,
+.view-mobile .availability-grid,
+.view-mobile .calculator-controls {
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+/* Posición de los puntos de navegación en móvil */
+.view-mobile .slider-dots {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15px;
+}
+
+/* Posición de las flechas en móvil (las subimos un poco para que queden sobre la imagen) */
+.view-mobile .slider-arrow {
+    top: 250px; /* Ajustado para quedar entre la imagen y el texto o sobre la imagen */
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
 }

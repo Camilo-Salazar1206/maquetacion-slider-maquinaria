@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slider Maquinaria - Estilo Dark</title>
+    <title>Slider Maquinaria - Con Tabs</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <div class="demo-container">
@@ -12,7 +14,10 @@
         
         <div class="demo-grid">
             <div class="demo-section">
-                <h2>🖥️ Versión Desktop</h2>
+                <div class="version-header">
+                    <h2 id="viewTitle">🖥️ Versión Desktop</h2>
+                    <button class="view-toggle-btn" id="viewToggle" type="button">Ver Mobile</button>
+                </div>
                 <div class="color-indicators">
                     <div class="color-box orange">1</div>
                     <div class="color-box green">2</div>
@@ -26,6 +31,7 @@
                     <div class="slider-container" id="desktop-slider">
                         <div class="slider-wrapper" id="desktopSliderWrapper">
                             
+                            <!-- Slide 1: Excavadoras -->
                             <div class="slide">
                                 <div class="slide-text-column">
                                     <h1 class="slide-main-title">Excavadoras Hidráulicas</h1>
@@ -34,12 +40,184 @@
                                         Potencia y precisión para sus proyectos más exigentes. Alquiler disponible por horas, días o meses con operador certificado.
                                     </p>
                                     
-                                </div>s
+                                    <!-- TABS COMPONENT -->
+                                    <div class="tabs-container">
+                                        <div class="tabs-header">
+                                            <button class="tab-button active" onclick="switchTab(event, 'specs1')">Specs</button>
+                                            <button class="tab-button" onclick="switchTab(event, 'tiempo1')">Tiempo</button>
+                                            <button class="tab-button" onclick="switchTab(event, 'servicios1')">Servicios</button>
+                                            <button class="tab-button" onclick="switchTab(event, 'pago1')">Pago</button>
+                                        </div>
+
+                                        <div class="tab-content active" id="specs1">
+                                            <div class="specs-grid">
+                                                <div class="spec-card">
+                                                    <h4>Capacidad</h4>
+                                                    <p>20 Ton</p>
+                                                    <small>Peso operativo</small>
+                                                </div>
+                                                <div class="spec-card">
+                                                    <h4>Alcance</h4>
+                                                    <p>9.8 m</p>
+                                                    <small>Alcance máximo</small>
+                                                </div>
+                                                <div class="spec-card">
+                                                    <h4>Profundidad</h4>
+                                                    <p>6.5 m</p>
+                                                    <small>Excavación máxima</small>
+                                                </div>
+                                                <div class="spec-card">
+                                                    <h4>Motor</h4>
+                                                    <p>150 HP</p>
+                                                    <small>Potencia neta</small>
+                                                </div>
+                                            </div>
+
+                                            <div class="accordion-item">
+                                                <div class="accordion-header" onclick="toggleAccordion(this)">
+                                                    <h4>Especificaciones del Motor</h4>
+                                                    <span class="accordion-icon">▼</span>
+                                                </div>
+                                                <div class="accordion-content">
+                                                    <ul class="spec-list">
+                                                        <li><span class="label">Modelo</span> <span class="value">Cummins QSB6.7</span></li>
+                                                        <li><span class="label">Potencia bruta</span> <span class="value">158 HP @ 2000 rpm</span></li>
+                                                        <li><span class="label">Consumo</span> <span class="value">18 L/h promedio</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-content" id="tiempo1">
+                                            <div class="availability-grid">
+                                                <div class="availability-card">
+                                                    <span class="duration-badge">Por Hora</span>
+                                                    <h4>$85</h4>
+                                                    <p>Mínimo 4 horas</p>
+                                                </div>
+                                                <div class="availability-card recommended">
+                                                    <span class="duration-badge" style="background: #10b981;">Top</span>
+                                                    <h4>$650</h4>
+                                                    <p>Por día (8 horas)</p>
+                                                </div>
+                                                <div class="availability-card">
+                                                    <span class="duration-badge">Mensual</span>
+                                                    <h4>$12,500</h4>
+                                                    <p>30 días</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="info-box">
+                                                <h4>Disponibilidad Inmediata</h4>
+                                                <div class="info-row">
+                                                    <span>Unidades disponibles</span>
+                                                    <strong>3 máquinas</strong>
+                                                </div>
+                                                <div class="info-row">
+                                                    <span>Tiempo entrega</span>
+                                                    <strong>24-48 horas</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-content" id="servicios1">
+                                            <div class="service-category">
+                                                <h3 class="category-title">Personal Incluido</h3>
+                                                <div class="service-list">
+                                                    <div class="service-item">
+                                                        <div class="checkmark"></div>
+                                                        <span>Operador certificado</span>
+                                                    </div>
+                                                    <div class="service-item">
+                                                        <div class="checkmark"></div>
+                                                        <span>Ayudante de obra</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="service-category">
+                                                <h3 class="category-title">Seguridad y Mantenimiento</h3>
+                                                <div class="service-list">
+                                                    <div class="service-item">
+                                                        <div class="checkmark"></div>
+                                                        <span>Mantenimiento incluido</span>
+                                                    </div>
+                                                    <div class="service-item">
+                                                        <div class="checkmark"></div>
+                                                        <span>Seguro todo riesgo</span>
+                                                    </div>
+                                                    <div class="service-item">
+                                                        <div class="checkmark"></div>
+                                                        <span>Soporte 24/7</span>
+                                                    </div>
+                                                    <div class="service-item">
+                                                        <div class="checkmark"></div>
+                                                        <span>Reemplazo inmediato</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-content" id="pago1">
+                                            <div class="pricing-calculator">
+                                                <h3 class="calculator-title">Calculadora de Cotización</h3>
+                                                <div class="calculator-controls">
+                                                    <div class="control-group">
+                                                        <label>Tipo de Alquiler</label>
+                                                        <select id="rentalType1" onchange="updatePrice('rentalType1', 'quantity1', 'totalPrice1')">
+                                                            <option value="85">Por Hora - $85/hr</option>
+                                                            <option value="650" selected>Por Día - $650</option>
+                                                            <option value="12500">Mensual - $12,500</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="control-group">
+                                                        <label>Cantidad</label>
+                                                        <input type="number" id="quantity1" value="1" min="1" max="30" oninput="updatePrice('rentalType1', 'quantity1', 'totalPrice1')">
+                                                    </div>
+                                                </div>
+                                                <div class="price-display">
+                                                    <div class="price-label">Total Estimado</div>
+                                                    <div class="price-amount" id="totalPrice1">$650</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="pricing-table">
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Modalidad</th>
+                                                            <th>Precio</th>
+                                                            <th>Ahorro</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Por Hora</td>
+                                                            <td class="price-tag">$85</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Día Completo</td>
+                                                            <td class="price-tag">$650</td>
+                                                            <td style="color: #10b981;">4%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Mensual</td>
+                                                            <td class="price-tag">$12,500</td>
+                                                            <td style="color: #10b981;">35%</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="slide-image-column">
                                     <img src="https://img.interempresas.net/fotos/4757803.jpeg" alt="Excavadora">
                                 </div>
                             </div>
 
+                            <!-- Slide 2: Aplanadoras -->
                             <div class="slide">
                                 <div class="slide-text-column">
                                     <h1 class="slide-main-title">Aplanadoras y Rodillos</h1>
@@ -48,12 +226,107 @@
                                         Maquinaria especializada para la construcción de carreteras y cimentaciones. Garantice la estabilidad de su terreno.
                                     </p>
                                     
+                                    <!-- TABS COMPONENT SLIDE 2 -->
+                                    <div class="tabs-container">
+                                        <div class="tabs-header">
+                                            <button class="tab-button active" onclick="switchTab(event, 'specs2')">Specs</button>
+                                            <button class="tab-button" onclick="switchTab(event, 'tiempo2')">Tiempo</button>
+                                            <button class="tab-button" onclick="switchTab(event, 'servicios2')">Servicios</button>
+                                            <button class="tab-button" onclick="switchTab(event, 'pago2')">Pago</button>
+                                        </div>
+
+                                        <div class="tab-content active" id="specs2">
+                                            <div class="specs-grid">
+                                                <div class="spec-card">
+                                                    <h4>Peso</h4>
+                                                    <p>12 Ton</p>
+                                                    <small>Peso operativo</small>
+                                                </div>
+                                                <div class="spec-card">
+                                                    <h4>Ancho</h4>
+                                                    <p>2.1 m</p>
+                                                    <small>Ancho de rodillo</small>
+                                                </div>
+                                                <div class="spec-card">
+                                                    <h4>Compactación</h4>
+                                                    <p>350 mm</p>
+                                                    <small>Profundidad efectiva</small>
+                                                </div>
+                                                <div class="spec-card">
+                                                    <h4>Motor</h4>
+                                                    <p>110 HP</p>
+                                                    <small>Potencia neta</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-content" id="tiempo2">
+                                            <div class="availability-grid">
+                                                <div class="availability-card">
+                                                    <span class="duration-badge">Por Hora</span>
+                                                    <h4>$70</h4>
+                                                    <p>Mínimo 4 horas</p>
+                                                </div>
+                                                <div class="availability-card recommended">
+                                                    <span class="duration-badge" style="background: #10b981;">Top</span>
+                                                    <h4>$550</h4>
+                                                    <p>Por día (8 horas)</p>
+                                                </div>
+                                                <div class="availability-card">
+                                                    <span class="duration-badge">Mensual</span>
+                                                    <h4>$10,500</h4>
+                                                    <p>30 días</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-content" id="servicios2">
+                                            <div class="service-category">
+                                                <h3 class="category-title">Personal Incluido</h3>
+                                                <div class="service-list">
+                                                    <div class="service-item">
+                                                        <div class="checkmark"></div>
+                                                        <span>Operador certificado</span>
+                                                    </div>
+                                                    <div class="service-item">
+                                                        <div class="checkmark"></div>
+                                                        <span>Asistente técnico</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-content" id="pago2">
+                                            <div class="pricing-calculator">
+                                                <h3 class="calculator-title">Calculadora de Cotización</h3>
+                                                <div class="calculator-controls">
+                                                    <div class="control-group">
+                                                        <label>Tipo de Alquiler</label>
+                                                        <select id="rentalType2" onchange="updatePrice('rentalType2', 'quantity2', 'totalPrice2')">
+                                                            <option value="70">Por Hora - $70/hr</option>
+                                                            <option value="550" selected>Por Día - $550</option>
+                                                            <option value="10500">Mensual - $10,500</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="control-group">
+                                                        <label>Cantidad</label>
+                                                        <input type="number" id="quantity2" value="1" min="1" max="30" oninput="updatePrice('rentalType2', 'quantity2', 'totalPrice2')">
+                                                    </div>
+                                                </div>
+                                                <div class="price-display">
+                                                    <div class="price-label">Total Estimado</div>
+                                                    <div class="price-amount" id="totalPrice2">$550</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="slide-image-column">
                                     <img src="https://cimientos.com.ec/wp-content/uploads/slider/cache/54f11528ae832276aae9a3df26f42c17/aplanadora4.jpg" alt="Rodillo">
                                 </div>
                             </div>
 
+                            <!-- Slide 3: Tractores -->
                             <div class="slide">
                                 <div class="slide-text-column">
                                     <h1 class="slide-main-title">Tractores John Deere</h1>
@@ -62,9 +335,103 @@
                                         Soluciones agrícolas de alto rendimiento. Preparación de suelos y transporte de carga con la mejor tecnología.
                                     </p>
                                     
+                                    <!-- TABS COMPONENT SLIDE 3 -->
+                                    <div class="tabs-container">
+                                        <div class="tabs-header">
+                                            <button class="tab-button active" onclick="switchTab(event, 'specs3')">Specs</button>
+                                            <button class="tab-button" onclick="switchTab(event, 'tiempo3')">Tiempo</button>
+                                            <button class="tab-button" onclick="switchTab(event, 'servicios3')">Servicios</button>
+                                            <button class="tab-button" onclick="switchTab(event, 'pago3')">Pago</button>
+                                        </div>
+
+                                        <div class="tab-content active" id="specs3">
+                                            <div class="specs-grid">
+                                                <div class="spec-card">
+                                                    <h4>Potencia</h4>
+                                                    <p>180 HP</p>
+                                                    <small>Potencia máxima</small>
+                                                </div>
+                                                <div class="spec-card">
+                                                    <h4>Tracción</h4>
+                                                    <p>4x4</p>
+                                                    <small>Doble tracción</small>
+                                                </div>
+                                                <div class="spec-card">
+                                                    <h4>Capacidad</h4>
+                                                    <p>5,000 kg</p>
+                                                    <small>Carga máxima</small>
+                                                </div>
+                                                <div class="spec-card">
+                                                    <h4>Combustible</h4>
+                                                    <p>280 L</p>
+                                                    <small>Tanque de diesel</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-content" id="tiempo3">
+                                            <div class="availability-grid">
+                                                <div class="availability-card">
+                                                    <span class="duration-badge">Por Hora</span>
+                                                    <h4>$95</h4>
+                                                    <p>Mínimo 4 horas</p>
+                                                </div>
+                                                <div class="availability-card recommended">
+                                                    <span class="duration-badge" style="background: #10b981;">Top</span>
+                                                    <h4>$750</h4>
+                                                    <p>Por día (8 horas)</p>
+                                                </div>
+                                                <div class="availability-card">
+                                                    <span class="duration-badge">Mensual</span>
+                                                    <h4>$14,000</h4>
+                                                    <p>30 días</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-content" id="servicios3">
+                                            <div class="service-category">
+                                                <h3 class="category-title">Personal Incluido</h3>
+                                                <div class="service-list">
+                                                    <div class="service-item">
+                                                        <div class="checkmark"></div>
+                                                        <span>Operador especializado</span>
+                                                    </div>
+                                                    <div class="service-item">
+                                                        <div class="checkmark"></div>
+                                                        <span>Técnico agrícola</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-content" id="pago3">
+                                            <div class="pricing-calculator">
+                                                <h3 class="calculator-title">Calculadora de Cotización</h3>
+                                                <div class="calculator-controls">
+                                                    <div class="control-group">
+                                                        <label>Tipo de Alquiler</label>
+                                                        <select id="rentalType3" onchange="updatePrice('rentalType3', 'quantity3', 'totalPrice3')">
+                                                            <option value="95">Por Hora - $95/hr</option>
+                                                            <option value="750" selected>Por Día - $750</option>
+                                                            <option value="14000">Mensual - $14,000</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="control-group">
+                                                        <label>Cantidad</label>
+                                                        <input type="number" id="quantity3" value="1" min="1" max="30" oninput="updatePrice('rentalType3', 'quantity3', 'totalPrice3')">
+                                                    </div>
+                                                </div>
+                                                <div class="price-display">
+                                                    <div class="price-label">Total Estimado</div>
+                                                    <div class="price-amount" id="totalPrice3">$750</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="slide-image-column">
-                                      <img src="https://ehsconsultoria.com.br/wp-content/uploads/2019/04/trator.jpg" alt="Tractor">
+                                    <img src="https://ehsconsultoria.com.br/wp-content/uploads/2019/04/trator.jpg" alt="Tractor">
                                 </div>
                             </div>
 
@@ -77,75 +444,69 @@
                     </div>
                 </div>
             </div>
-
-            <div class="demo-section">
-                <h2>📱 Versión Mobile</h2>
-                <div class="color-indicators">
-                    <div class="color-box orange">1</div>
-                    <div class="color-box green">2</div>
-                    <div class="color-box yellow">3</div>
-                </div>
-                
-                <h1 class="portfolio-title-mobile">Nuestro <span class="portfolio-highlight-mobile">portafolio</span></h1>
-                <p class="portfolio-subtitle-mobile">Seleccione la maquinaria que necesita <b>al plazo que requiera, sin endeudamiento.</b></p>
-                
-                <div class="mobile-view">
-                    <div class="slider-container" id="mobile-slider">
-                        <div class="slider-wrapper" id="mobileSliderWrapper">
-                            
-                             <div class="slide">
-                                <div class="slide-text-column">
-                                    <h2 class="slide-main-title">Excavadoras</h2>
-                                    <h4 class="slide-uptitle">Movimiento de tierra</h4>
-                                    <p class="slide-description">
-                                        Potencia y precisión para sus proyectos más exigentes. Alquiler disponible por horas, días o meses con operador certificado.
-                                    </p>
-                         
-                                </div>
-                                <div class="slide-image-column">
-                                    <img src="https://img.interempresas.net/fotos/4757803.jpeg" alt="Excavadora">
-                                </div>
-                            </div>
-
-                            <div class="slide">
-                                <div class="slide-text-column">
-                                    <h2 class="slide-main-title">Aplanadoras</h2>
-                                    <h4 class="slide-uptitle">Compactación</h4>
-                                    <p class="slide-description">
-                                        Maquinaria especializada para la construcción de carreteras y cimentaciones. Garantice la estabilidad de su terreno.
-                                    </p>
-                         
-                                </div>
-                                <div class="slide-image-column">
-                                  <img src="https://cimientos.com.ec/wp-content/uploads/slider/cache/54f11528ae832276aae9a3df26f42c17/aplanadora4.jpg" alt="Rodillo">
-                                </div>
-                            </div>
-
-                            <div class="slide">
-                                <div class="slide-text-column">
-                                    <h2 class="slide-main-title">Tractores</h2>
-                                    <h4 class="slide-uptitle">Agrícola</h4>
-                                    <p class="slide-description">
-                                        Soluciones agrícolas de alto rendimiento. Preparación de suelos y transporte de carga con la mejor tecnología.
-                                    </p>
-                         
-                                </div>
-                                <div class="slide-image-column">
-                                      <img src="https://ehsconsultoria.com.br/wp-content/uploads/2019/04/trator.jpg" alt="Tractor">
-                                </div>
-                            </div>
-
-                        </div>
-                        
-                        <button class="slider-arrow prev" onclick="moveMobileSlide(-1)">❮</button>
-                        <button class="slider-arrow next" onclick="moveMobileSlide(1)">❯</button>
-                        <div class="slider-dots" id="mobileDotsContainer"></div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Tab switching function
+        function switchTab(event, tabId) {
+            // Get the parent tabs container
+            const tabsContainer = event.target.closest('.tabs-container');
+            
+            // Hide all tab contents in this container
+            const tabContents = tabsContainer.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all buttons in this container
+            const tabButtons = tabsContainer.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => button.classList.remove('active'));
+            
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Accordion toggle function
+        function toggleAccordion(header) {
+            const accordionItem = header.parentElement;
+            const isActive = accordionItem.classList.contains('active');
+            
+            // Close all accordions in the same tab
+            const tabContent = header.closest('.tab-content');
+            const accordions = tabContent.querySelectorAll('.accordion-item');
+            accordions.forEach(item => item.classList.remove('active'));
+            
+            // Open clicked accordion if it wasn't active
+            if (!isActive) {
+                accordionItem.classList.add('active');
+            }
+        }
+
+        // Price calculator update function
+        function updatePrice(rentalTypeId, quantityId, priceDisplayId) {
+            const rentalType = document.getElementById(rentalTypeId);
+            const quantity = document.getElementById(quantityId);
+            const totalPrice = document.getElementById(priceDisplayId);
+            
+            const basePrice = parseFloat(rentalType.value);
+            const qty = parseInt(quantity.value);
+            const total = basePrice * qty;
+            
+            totalPrice.textContent = `$${total.toLocaleString()}`;
+        }
+
+        // Initialize first accordion in each specs tab as open
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstAccordions = document.querySelectorAll('#specs1 .accordion-item, #specs2 .accordion-item, #specs3 .accordion-item');
+            firstAccordions.forEach(accordion => {
+                if (accordion.querySelector('.accordion-header')) {
+                    accordion.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
