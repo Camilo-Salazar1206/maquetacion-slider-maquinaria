@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #19191a;
+    background: #272626;
     width: 100%;
     min-height: 100vh;
     padding: 40px 0;
@@ -219,6 +219,10 @@ body {
     background: #FF8C00;
 }
 
+.tab-label-mobile {
+    display: none;
+}
+
 .tab-content {
     display: none;
     padding: 1.2rem;
@@ -240,6 +244,32 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 14px 40px;
+    background: linear-gradient(90deg, #ff8500 0%, #ffd600 100%);
+    color: #000;
+    font-weight: 700;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
+    background: linear-gradient(90deg, #ffd600 0%, #ff8500 100%);
 }
 
 /* Custom Scrollbar */
@@ -517,7 +547,7 @@ body {
     color: #10b981;
 }
 
-/* Pago Tab */
+/* Cotizacion Tab */
 .pricing-calculator {
     background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
     padding: 1.2rem;
@@ -815,9 +845,23 @@ body {
         padding: 0.7rem 0.5rem;
     }
 
+    .tab-label-desktop {
+        display: none;
+    }
+
+    .tab-label-mobile {
+        display: inline;
+    }
+
     .tab-content {
         max-height: 220px;
         padding: 1rem;
+    }
+
+    .cta-button {
+        margin-top: 1.2rem;
+        padding: 12px 32px;
+        font-size: 0.9rem;
     }
 }
 
@@ -944,6 +988,14 @@ body {
     gap: 10px;
 }
 
+.view-mobile .tab-label-desktop {
+    display: none;
+}
+
+.view-mobile .tab-label-mobile {
+    display: inline;
+}
+
 /* Posición de los puntos de navegación en móvil */
 .view-mobile .slider-dots {
     left: 50%;
@@ -958,4 +1010,12 @@ body {
     width: 35px;
     height: 35px;
     font-size: 14px;
+}
+
+.view-mobile .cta-button {
+    display: block;
+    text-align: center;
+    margin: 1.5rem auto 0;
+    padding: 16px 28px;
+    font-size: 0.85rem;
 }
